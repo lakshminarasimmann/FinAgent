@@ -1,0 +1,47 @@
+# QLoRA (4-bit NF4) Fine-Tuning Configuration
+model_name_or_path: "Qwen/Qwen2.5-0.5B-Instruct"
+output_dir: "outputs/checkpoints_qlora"
+train_data_path: "data/processed/train.jsonl"
+val_data_path: "data/processed/val.jsonl"
+test_data_path: "data/processed/test.jsonl"
+
+# Training Hyperparameters
+per_device_train_batch_size: 2
+per_device_eval_batch_size: 2
+gradient_accumulation_steps: 8
+learning_rate: 2.0e-4
+num_train_epochs: 5
+lr_scheduler_type: "cosine"
+warmup_ratio: 0.05
+weight_decay: 0.01
+logging_steps: 10
+eval_strategy: "epoch"
+save_strategy: "epoch"
+save_total_limit: 2
+max_seq_length: 512
+seed: 42
+fp16: true
+bf16: false
+
+# LoRA Configuration
+peft_type: "LORA"
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+target_modules:
+  - "q_proj"
+  - "k_proj"
+  - "v_proj"
+  - "o_proj"
+  - "gate_proj"
+  - "up_proj"
+  - "down_proj"
+bias: "none"
+task_type: "CAUSAL_LM"
+
+# QLoRA Quantization (4-bit NormalFloat with Double Quant)
+load_in_4bit: true
+load_in_8bit: false
+bnb_4bit_quant_type: "nf4"
+bnb_4bit_use_double_quant: true
+bnb_4bit_compute_dtype: "float16"

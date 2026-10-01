@@ -1,0 +1,13 @@
+{
+  "experiment": "checkpoints_lora",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "quantization": "fp16 (LoRA)",
+  "train_samples": 868,
+  "val_samples": 186,
+  "epochs": 3,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "train_loss": 0.36632519129550817,
+  "total_train_time_sec": 437.53,
+  "peak_gpu_mem_mb": 5685.31
+}

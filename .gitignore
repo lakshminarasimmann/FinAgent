@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Intermediate training checkpoints & optimizer states
+checkpoint-*/
+*/checkpoint-*/
+*optimizer.pt
+*scheduler.pt
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp

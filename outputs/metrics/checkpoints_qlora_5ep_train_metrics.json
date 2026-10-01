@@ -1,0 +1,13 @@
+{
+  "experiment": "checkpoints_qlora_5ep",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "quantization": "4-bit (QLoRA)",
+  "train_samples": 868,
+  "val_samples": 186,
+  "epochs": 5,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "train_loss": 0.31015077699314464,
+  "total_train_time_sec": 2817.33,
+  "peak_gpu_mem_mb": 2307.96
+}
